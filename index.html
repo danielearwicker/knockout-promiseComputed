@@ -6,19 +6,7 @@
         <script src="lib/knockout-promiseComputed.js"></script>
     </head>
     <body>
-        <div>
-            Enter a message: <input type="text" data-bind="textInput: message">
-        </div>
-        <div>
-            <label>
-                <input type="checkbox" data-bind="checked: activated"> Activate
-            </label>
-        </div>
-        <div data-bind="if: activated">
-            <!-- ko if: response -->
-                Response is: <span data-bind="text: response"></span>
-            <!-- /ko -->
-        </div>
+        <div id="container"></div>
         <script src="index.js"></script>
     </body>
 </html>
