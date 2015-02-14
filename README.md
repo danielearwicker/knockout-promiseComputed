@@ -1,4 +1,4 @@
-# knockout-pureasync
+# knockout-promiseComputed
 
 To run this example:
 
