@@ -15,9 +15,10 @@ function setup() {
         '    </label>' +
         '</div>' +
         '<div data-bind="if: activated">' +
-        '        <!-- ko if: response -->' +
+        '    <!-- ko if: response -->' +
         '        Response is: <span data-bind="text: response"></span>' +
         '    <!-- /ko -->' +
+        '    <!-- ko execute: mySideEffects --><!-- /ko -->' +
         '</div>';
 
     container.innerHTML = html;
@@ -32,7 +33,11 @@ function setup() {
     ko.applyBindings({
         message: message,
         activated: activated,
-        response: response
+        response: response,
+        mySideEffects: ko.pureComputed(function() {
+            console.log("Here's a side-effect: " +
+                message() + " and " + activated());
+        })
     }, container);
 }
 
